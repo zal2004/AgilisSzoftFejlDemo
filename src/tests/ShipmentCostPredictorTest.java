@@ -20,5 +20,4 @@ class ShipmentCostPredictorTest {
                 assertEquals(10050, ShipmentCostPredictor.getShipmentCost(true, 250,
                         new Paracel(10, 10, 10, 250), "Air" ), 0.0);
         }
-
 }
