@@ -1,0 +1,23 @@
+package main;
+
+import java.util.HashMap;
+
+public class TaxPerdictor {
+    static HashMap<String, Double> taxMap;
+
+    public TaxPerdictor() {
+        //fill up the taxMap
+        taxMap = new HashMap<>();
+        taxMap.put("Chlothes", 27.0);
+        taxMap.put("General Food", 27.0);
+        taxMap.put("Books", 5.0);
+        taxMap.put("Essential Food", 5.0);
+    }
+
+    public static double getTax(String name) {
+        if(!taxMap.containsKey(name)) {
+            return 27;
+        }
+        return taxMap.get(name);
+    }
+}
