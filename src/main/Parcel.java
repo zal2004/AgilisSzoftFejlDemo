@@ -7,7 +7,7 @@ public class Parcel extends Product {
     int weight;
 
     public Parcel(String prodName, int price, int stock, int a, int b, int c, int weight) {
-        super(prodName, 0, 0);
+        super(prodName, price, stock);
         this.a = a;
         this.b = b;
         this.c = c;
