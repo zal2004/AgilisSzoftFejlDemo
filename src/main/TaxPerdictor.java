@@ -8,7 +8,7 @@ public class TaxPerdictor {
     public TaxPerdictor() {
         //fill up the taxMap
         taxMap = new HashMap<>();
-        taxMap.put("Chlothes", 27.0);
+        taxMap.put("Clothes", 27.0);
         taxMap.put("General Food", 27.0);
         taxMap.put("Books", 5.0);
         taxMap.put("Essential Food", 5.0);

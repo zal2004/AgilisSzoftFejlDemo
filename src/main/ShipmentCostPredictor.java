@@ -39,7 +39,7 @@ public class ShipmentCostPredictor {
         shipmentSizeCMap.put(90, 15);
     }
 
-    public static int getShipmentCost(boolean isExpress, int weight, Paracel paracel, String type){
+    public static int getShipmentCost(boolean isExpress, int weight, Parcel parcel, String type){
         double cost = 0;
         if(isExpress){
             cost += 10000;
@@ -54,31 +54,31 @@ public class ShipmentCostPredictor {
         else if(weight <= 500){
             cost += shipmentWeightMap.get(500);
         }
-        if(paracel.getA() <= 10){
+        if(parcel.getA() <= 10){
             cost += shipmentSizeAMap.get(10);
         }
-        else if(paracel.getA() <= 20){
+        else if(parcel.getA() <= 20){
             cost += shipmentSizeAMap.get(20);
         }
-        else if(paracel.getA() <= 30){
+        else if(parcel.getA() <= 30){
             cost += shipmentSizeAMap.get(30);
         }
-        if(paracel.getB() <= 20){
+        if(parcel.getB() <= 20){
             cost += shipmentSizeBMap.get(20);
         }
-        else if(paracel.getB() <= 40){
+        else if(parcel.getB() <= 40){
             cost += shipmentSizeBMap.get(40);
         }
-        else if(paracel.getB() <= 60){
+        else if(parcel.getB() <= 60){
             cost += shipmentSizeBMap.get(60);
         }
-        if(paracel.getC() <= 30){
+        if(parcel.getC() <= 30){
             cost += shipmentSizeCMap.get(30);
         }
-        else if(paracel.getC() <= 60){
+        else if(parcel.getC() <= 60){
             cost += shipmentSizeCMap.get(60);
         }
-        else if(paracel.getC() <= 90){
+        else if(parcel.getC() <= 90){
             cost += shipmentSizeCMap.get(90);
         }
         return (int)cost;

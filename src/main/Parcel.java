@@ -1,12 +1,12 @@
 package main;
 
-public class Paracel {
+public class Parcel {
     int a;
     int b;
     int c;
     int weight;
 
-    public Paracel(int a, int b, int c, int weight) {
+    public Parcel(int a, int b, int c, int weight) {
         this.a = a;
         this.b = b;
         this.c = c;

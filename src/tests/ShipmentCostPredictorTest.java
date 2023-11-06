@@ -1,6 +1,6 @@
 package tests;
 
-import main.Paracel;
+import main.Parcel;
 import main.ShipmentCostPredictor;
 
 import java.awt.*;
@@ -18,6 +18,6 @@ class ShipmentCostPredictorTest {
         @org.junit.jupiter.api.Test
         void getShipmentCost() {
                 assertEquals(10050, ShipmentCostPredictor.getShipmentCost(true, 250,
-                        new Paracel(10, 10, 10, 250), "Air" ), 0.0);
+                        new Parcel(10, 10, 10, 250), "Air" ), 0.0);
         }
 }
