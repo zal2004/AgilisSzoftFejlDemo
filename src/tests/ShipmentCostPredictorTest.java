@@ -18,6 +18,7 @@ class ShipmentCostPredictorTest {
         @org.junit.jupiter.api.Test
         void getShipmentCost() {
                 assertEquals(10050, ShipmentCostPredictor.getShipmentCost(true, 250,
-                        new Parcel(10, 10, 10, 250), "Air" ), 0.0);
+                        new Parcel("TestProd",25, 2, 10, 10, 10, 250), "Air" ),
+                        0.0);
         }
 }
