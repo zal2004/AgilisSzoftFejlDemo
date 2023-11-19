@@ -2,10 +2,10 @@ package main;
 
 import java.util.HashMap;
 
-public class TaxPerdictor {
+public class TaxPredictor {
     static HashMap<String, Double> taxMap;
 
-    public TaxPerdictor() {
+    public TaxPredictor() {
         //fill up the taxMap
         taxMap = new HashMap<>();
         taxMap.put("Clothes", 27.0);

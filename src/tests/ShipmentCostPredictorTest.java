@@ -3,8 +3,6 @@ package tests;
 import main.Parcel;
 import main.ShipmentCostPredictor;
 
-import java.awt.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShipmentCostPredictorTest {
