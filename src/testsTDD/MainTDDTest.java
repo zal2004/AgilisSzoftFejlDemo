@@ -1,12 +1,14 @@
-package tests;
+package testsTDD;
 
-import main.Product;
-import java.util.ArrayList;
 import main.Main;
+import main.Product;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BestProductsTest {
+public class MainTDDTest {
     @Test
     public void ZeroProductTest() {
         ArrayList<Product> products = new ArrayList<Product>();
