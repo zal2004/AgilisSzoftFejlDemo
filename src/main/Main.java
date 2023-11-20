@@ -1,5 +1,6 @@
 package main;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -39,7 +40,7 @@ public class Main {
                     }
                 }
                 case "2" -> {
-                    ArrayList<Product> bestProducts = Evalutate(products);
+                    List<Product> bestProducts = Evalutate(products);
                     for (Product product : bestProducts) {
                         System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
                     }
@@ -53,7 +54,7 @@ public class Main {
         }
     }
 
-    public static ArrayList<Product> Evalutate(ArrayList<Product> products){
+    public static List<Product> Evalutate(List<Product> products){
         int firstBestValue = 0;
         Product firstBestProduct = null;
         int secondaryBestValue = 0;

@@ -5,6 +5,7 @@ import main.Product;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,7 +18,7 @@ public class MainTDDTest {
         products.add(new Product("Harmadik", 300, 40));
         products.add(new Product("Negyedik", 400, 50));
 
-        ArrayList<Product> testResult = Main.Evalutate(products);
+        List<Product> testResult = Main.Evalutate(products);
         ArrayList<Product> expectedResult = new ArrayList<>();
 
         assertEquals(expectedResult, testResult);
@@ -33,7 +34,7 @@ public class MainTDDTest {
 
         products.get(2).incrementSold(1);
 
-        ArrayList<Product> testResult = Main.Evalutate(products);
+        List<Product> testResult = Main.Evalutate(products);
         ArrayList<Product> expectedResult = new ArrayList<>();
         expectedResult.add(products.get(2));
 
@@ -54,7 +55,7 @@ public class MainTDDTest {
         products.get(2).incrementSold(1);
         products.get(3).incrementSold(2);
 
-        ArrayList<Product> testResult = Main.Evalutate(products);
+        List<Product> testResult = Main.Evalutate(products);
         ArrayList<Product> expectedResult = new ArrayList<>();
         expectedResult.add(products.get(3));
         expectedResult.add(products.get(1));
