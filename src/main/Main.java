@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Product> products = new ArrayList<>();
         products.add(new Product("Elso", 100, 20));
         products.add(new Product("Masodik", 200, 30));
         products.add(new Product("Harmadik", 300, 40));
@@ -20,34 +20,34 @@ public class Main {
 
         String displayPrice="Dollár";
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Sentinel\n\n" +
-                "Összes termék megtekintése: 1\n" +
-                "Kelendő termékek megtekintése: 2\n" +
-                "Valutaváltás forint: 3\n" +
-                "Valutaváltás euró: 4\n" +
-                "Valutaváltás dollár: 5\n" +
-                "Kilépés: exit");
+        System.out.println("""
+                Sentinel
+                
+                Összes termék megtekintése: 1
+                Kelendő termékek megtekintése: 2
+                Valutaváltás forint: 3
+                Valutaváltás euró: 4
+                Valutaváltás dollár: 5
+                Kilépés: exit
+                """);
         String userInput = scanner.nextLine();
         while(!userInput.equals("exit")) {
-            if (userInput.equals("1")){
-                for (Product product : products){
-                    System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+            switch (userInput) {
+                case "1" -> {
+                    for (Product product : products) {
+                        System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+                    }
                 }
-            }
-            else if (userInput.equals("2")){
-                ArrayList<Product> bestProducts = Evalutate(products);
-                for (Product product : bestProducts){
-                    System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+                case "2" -> {
+                    ArrayList<Product> bestProducts = Evalutate(products);
+                    for (Product product : bestProducts) {
+                        System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+                    }
                 }
-            }
-            else if (userInput.equals("3")){
-                displayPrice = "Forint";
-            }
-            else if (userInput.equals("4")){
-                displayPrice = "Euró";
-            }
-            else if (userInput.equals("5")){
-                displayPrice = "Dollár";
+                case "3" -> displayPrice = "Forint";
+                case "4" -> displayPrice = "Euró";
+                case "5" -> displayPrice = "Dollár";
+                default -> System.out.println("Nem megfelelő input");
             }
             userInput = scanner.nextLine();
         }
