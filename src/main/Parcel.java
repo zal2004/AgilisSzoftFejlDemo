@@ -15,7 +15,7 @@ public class Parcel extends Product {
     }
 
     public Parcel(Product prod, int a, int b, int c, int weight){
-        super(prod.getName(), prod.getPrice(), prod.getStock());
+        super(prod.getName(), prod.getPriceInUSD(), prod.getStock());
         this.a = a;
         this.b = b;
         this.c = c;

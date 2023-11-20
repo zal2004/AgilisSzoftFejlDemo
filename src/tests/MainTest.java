@@ -60,4 +60,28 @@ public class MainTest {
 
         assertEquals(expectedResult, testResult);
     }
+
+    @Test
+    public void USDtoUSDTest(){
+        Product testproduct = new Product("Elso", 100, 20);
+        double resultValue = main.Main.Exchange(testproduct, "Dollár");
+
+        assertEquals(100, resultValue);
+    }
+
+    @Test
+    public void USDtoForintTest(){
+        Product testproduct = new Product("Elso", 100, 20);
+        double resultValue = main.Main.Exchange(testproduct, "Forint");
+
+        assertEquals(40000, resultValue);
+    }
+
+    @Test
+    public void USDtoEurTest(){
+        Product testproduct = new Product("Elso", 100, 20);
+        double resultValue = main.Main.Exchange(testproduct, "Euró");
+
+        assertEquals(150, resultValue);
+    }
 }
