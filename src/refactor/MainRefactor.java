@@ -19,10 +19,13 @@ public class MainRefactor {
         products.get(3).incrementSold(2);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Sentinel\n\n" +
-                "Összes termék megtekintése: 1\n" +
-                "Kelendő termékek megtekintése: 2\n" +
-                "Kilépés: exit");
+        System.out.println("""
+                Sentinel
+                
+                Összes termék megtekintése: 1
+                Kelendő termékek megtekintése: 2
+                Kilépés: exit
+                """);
         String userInput = scanner.nextLine();
         while(!userInput.equals("exit")) {
             if (userInput.equals("1")){
