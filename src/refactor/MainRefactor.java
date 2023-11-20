@@ -3,6 +3,7 @@ package refactor;
 import main.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainRefactor {
@@ -34,7 +35,7 @@ public class MainRefactor {
                 }
             }
             if (userInput.equals("2")){
-                ArrayList<ProductRefactor> bestProducts = EvalutateTop3(products);
+                List<ProductRefactor> bestProducts = EvalutateTop3(products);
                 for (ProductRefactor product : bestProducts){
                     System.out.println(product.getName() + " " + product.getPrice() + " " + product.getStock());
                 }
@@ -43,7 +44,7 @@ public class MainRefactor {
         }
     }
 
-    public static ArrayList<ProductRefactor> EvalutateTop3(ArrayList<ProductRefactor> products){
+    public static List<ProductRefactor> EvalutateTop3(ArrayList<ProductRefactor> products){
         int firstBestValue = 0;
         int secondaryBestValue = 0;
         int thirdBestValue = 0;

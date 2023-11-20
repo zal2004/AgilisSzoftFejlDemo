@@ -5,6 +5,7 @@ import refactor.MainRefactor;
 import refactor.ProductRefactor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,7 +23,7 @@ public class MainRefactorTest {
     public void ZeroProductTest() {
         ArrayList<ProductRefactor> products = initTest();
 
-        ArrayList<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
+        List<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
         ArrayList<ProductRefactor> expectedResult = new ArrayList<>();
 
         assertEquals(expectedResult, testResult);
@@ -34,7 +35,7 @@ public class MainRefactorTest {
 
         products.get(2).incrementSold(2);
 
-        ArrayList<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
+        List<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
         ArrayList<ProductRefactor> expectedResult = new ArrayList<>();
         expectedResult.add(products.get(2));
 
@@ -51,7 +52,7 @@ public class MainRefactorTest {
         products.get(2).incrementSold(2);
         products.get(3).incrementSold(1);
 
-        ArrayList<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
+        List<ProductRefactor> testResult = MainRefactor.EvalutateTop3(products);
         ArrayList<ProductRefactor> expectedResult = new ArrayList<>();
         expectedResult.add(products.get(2));
         expectedResult.add(products.get(3));
