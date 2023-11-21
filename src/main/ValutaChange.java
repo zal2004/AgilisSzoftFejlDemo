@@ -2,7 +2,6 @@ package main;
 
 public class ValutaChange {
     private String name;
-
     private double exchangerate;
 
     public ValutaChange(String name, double exchangerate){

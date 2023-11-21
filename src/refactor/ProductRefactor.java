@@ -15,15 +15,12 @@ public class ProductRefactor {
         this.value = 0;
     }
 
-    public String List(){
-        return "Name: " + name + "\tPrice: " + price + "\tStock: " + stock;
-    }
-
     public void incrementSold(int soldCount){
         sold += soldCount;
         stock -= soldCount;
         value += soldCount*price;
     }
+
     public String getName(){
         return name;
     }

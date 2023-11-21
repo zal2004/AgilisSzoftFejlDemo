@@ -7,9 +7,7 @@ public class Product {
     private int priceInUSD;
     private int stock;
     private int sold;
-
     private String displayPrice;
-
 
     public Product(String name, int priceInUSD, int stock) {
         this.name = name;
@@ -35,14 +33,10 @@ public class Product {
         sold += soldCount;
         stock -= soldCount;
     }
-
     public int getSold() {
         return sold;
     }
-
-
     public String getInvaluta() {return displayPrice;}
-
     public void setInvaluta(String displayPrice) {
         this.displayPrice = displayPrice;
     }
