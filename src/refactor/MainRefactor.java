@@ -1,13 +1,10 @@
 package refactor;
 
-import main.Product;
-import org.junit.Test;
+import main.ValutaChange;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainRefactor {
     public static void main(String[] args) {
@@ -28,20 +25,39 @@ public class MainRefactor {
                 
                 Összes termék megtekintése: 1
                 Kelendő termékek megtekintése: 2
+                Valutaváltás forint: 3
+                Valutaváltás euró: 4
+                Valutaváltás dollár: 5
                 Kilépés: exit
                 """);
+
+        String displayPrice="Dollár";
         String userInput = scanner.nextLine();
         while(!userInput.equals("exit")) {
-            if (userInput.equals("1")){
-                for (ProductRefactor product : products){
-                    System.out.println(product.getName() + " " + product.getPrice() + " " + product.getStock());
-                }
-            }
-            if (userInput.equals("2")){
-                List<ProductRefactor> bestProducts = EvalutateTop3(products);
-                for (ProductRefactor product : bestProducts){
-                    System.out.println(product.getName() + " " + product.getPrice() + " " + product.getStock());
-                }
+            switch (userInput) {
+                case "1":
+                    for (ProductRefactor product : products) {
+                        System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+                    }
+                    break;
+                case "2":
+                    List<ProductRefactor> bestProducts = EvalutateTop3(products);
+                    for (ProductRefactor product : bestProducts) {
+                        System.out.println(product.getName() + " " + Exchange(product, displayPrice) + " " + product.getStock());
+                    }
+                    break;
+                case "3":
+                    displayPrice = "Forint";
+                    break;
+                case "4":
+                    displayPrice = "Euró";
+                    break;
+                case "5":
+                    displayPrice = "Dollár";
+                    break;
+                default:
+                    System.out.println("Nem megfelelő input");
+                    break;
             }
             userInput = scanner.nextLine();
         }
@@ -87,27 +103,18 @@ public class MainRefactor {
         return list;
     }
 
-    @Test
-    public void USDtoUSDTest(){
-        Product testproduct = new Product("Elso", 100, 20);
-        double resultValue = main.Main.Exchange(testproduct, "Dollár");
+    public static double Exchange(ProductRefactor product, String displayPrice){
+        ValutaChange forint, dollar, euro;
 
-        assertEquals(100, resultValue);
-    }
+        dollar = new ValutaChange("Dollár", 1);
+        forint = new ValutaChange("Forint", 400);
+        euro = new ValutaChange("Euró", 1.5);
 
-    @Test
-    public void USDtoForintTest(){
-        Product testproduct = new Product("Elso", 100, 20);
-        double resultValue = main.Main.Exchange(testproduct, "Forint");
-
-        assertEquals(40000, resultValue);
-    }
-
-    @Test
-    public void USDtoEurTest(){
-        Product testproduct = new Product("Elso", 100, 20);
-        double resultValue = main.Main.Exchange(testproduct, "Euró");
-
-        assertEquals(150, resultValue);
+        return switch (displayPrice) {
+            case "Forint" -> product.getPriceInUSD() * forint.getExchangerate();
+            case "Euró" -> product.getPriceInUSD() * euro.getExchangerate();
+            case "Dollár" -> product.getPriceInUSD() * dollar.getExchangerate();
+            default -> product.getPriceInUSD();
+        };
     }
 }

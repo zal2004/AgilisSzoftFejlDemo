@@ -8,7 +8,5 @@ public class ValutaChange {
         this.name = name;
         this.exchangerate=exchangerate;
     }
-
-    public String getName(){return name;}
     public double getExchangerate(){return exchangerate;}
 }

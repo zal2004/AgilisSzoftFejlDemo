@@ -1,9 +1,8 @@
 package testsRefactor;
 
-import org.junit.Test;
 import refactor.MainRefactor;
 import refactor.ProductRefactor;
-
+import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,5 +58,29 @@ public class MainRefactorTest {
         expectedResult.add(products.get(0));
 
         assertEquals(expectedResult, testResult);
+    }
+
+    @Test
+    public void USDtoUSDTest(){
+        ProductRefactor testproduct = new ProductRefactor("Elso", 100, 20);
+        double resultValue = MainRefactor.Exchange(testproduct, "Dollár");
+
+        assertEquals(100, resultValue);
+    }
+
+    @Test
+    public void USDtoForintTest(){
+        ProductRefactor testproduct = new ProductRefactor("Elso", 100, 20);
+        double resultValue = MainRefactor.Exchange(testproduct, "Forint");
+
+        assertEquals(40000, resultValue);
+    }
+
+    @Test
+    public void USDtoEurTest(){
+        ProductRefactor testproduct = new ProductRefactor("Elso", 100, 20);
+        double resultValue = MainRefactor.Exchange(testproduct, "Euró");
+
+        assertEquals(150, resultValue);
     }
 }

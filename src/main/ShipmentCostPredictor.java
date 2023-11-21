@@ -83,6 +83,4 @@ public class ShipmentCostPredictor {
         }
         return (int)cost;
     }
-
-
 }

@@ -17,6 +17,10 @@ public class Product {
         this.displayPrice = "Dollár";
     }
 
+    public void incrementSold(int soldCount){
+        sold += soldCount;
+        stock -= soldCount;
+    }
     public String List(){
         return "Name: " + name + "\tPrice: " + priceInUSD + "\tStock: " + stock;
     }
@@ -29,15 +33,7 @@ public class Product {
     public int getStock(){
         return stock;
     }
-    public void incrementSold(int soldCount){
-        sold += soldCount;
-        stock -= soldCount;
-    }
     public int getSold() {
         return sold;
-    }
-    public String getInvaluta() {return displayPrice;}
-    public void setInvaluta(String displayPrice) {
-        this.displayPrice = displayPrice;
     }
 }

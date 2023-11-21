@@ -1,12 +1,8 @@
 package refactor;
 
-
 import java.util.HashMap;
 
-
-
 public class Limits {
-
     static int[] weightLimits;
     static int[] sizeALimits;
     static int[] sizeBLimits;

@@ -1,4 +1,5 @@
 package main;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,9 +17,6 @@ public class Main {
         products.get(2).incrementSold(1);
         products.get(3).incrementSold(2);
 
-
-
-
         String displayPrice="Dollár";
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -31,6 +29,7 @@ public class Main {
                 Valutaváltás dollár: 5
                 Kilépés: exit
                 """);
+
         String userInput = scanner.nextLine();
         while(!userInput.equals("exit")) {
             switch (userInput) {
@@ -92,8 +91,8 @@ public class Main {
 
         return list;
     }
+
     public static double Exchange(Product product, String displayPrice){
-        // innen valutaváltásos móka
         ValutaChange forint, dollar, euro;
 
         dollar = new ValutaChange("Dollár", 1);
@@ -110,7 +109,5 @@ public class Main {
             default:
                 return product.getPriceInUSD();
         }
-
-
     }
 }
