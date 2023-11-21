@@ -43,8 +43,7 @@ public class ShipmentCostPredictorRefactor {
 
     public ShipmentCostPredictorRefactor(){
         loadInData();
-
-
+        Limits limits = new Limits();
     }
 
     public static int getShipmentCost(boolean isExpress, int weight, Parcel parcel, String type){
